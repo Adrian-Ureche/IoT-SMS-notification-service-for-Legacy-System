@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>39 Input Boxes</title>
+</head>
+<body>
+
+<script>
+    // Lista cu id-urile pentru input box-uri
+    const widgetIds = [
+        "widgetV4a68520a32fd4c99a55514b35565cd3f",
+        "widgetVa693557cad374256a4a2d804e3f43a89",
+        "widgetVb3dd31046a93420f94f8368dc8f2450a",
+        "widgetVf74fbfd4e5104d6f839de0711c7ea8d2",
+        "widgetVbc3682bf78e24760bb89d255538a6d4b",
+        "widgetVe8faeb3c29d543ae964375a15ed38ca3",
+        "widgetV0ec6bdc7fc6e4a9486c204c223cb67e7",
+        "widgetVb2dc04786f83421090d6f1b8d6b0b4d3",
+        "widgetVee0b0317c8414b5eb5258a5ebb8c2724",
+        "widgetV40cdaa02fc8a471aa5ae7e3ad3020107",
+        "widgetVe95f195040ad4356a11643b974119e61",
+        "widgetV6bc1e8330acb4e2390a5b37082139f80",
+        "widgetV7f06a09e11a44464a3c7db86165dd052",
+        "widgetVd00e161176534b0e99d8e438cb38fb4e",
+        "widgetVb2bd17da82444c22abf57dcd329d4158",
+        "widgetV64ee6bb6e69246068b68849c5505e3d7",
+        "widgetV30ec8af34ffd4ca7b02eab0ed93038bf",
+        "widgetVbb2205ed4e6149eb9d5bc99fe22e1199",
+        "widgetVba160ed8187e429abb7ad3b2278e5866",
+        "widgetV5b41e3b2d9144bafab33475f91d689cd",
+        "widgetV952fa8ef7a2a41b9bb28e5dc54250c35",
+        "widgetV8206a08de25348c399996b0e79e459e8",
+        "widgetVf6e84a885d4a4aa6a04a1b39d8060ce1",
+        "widgetV1b1a0f5ee2654162bbb601e2411721f6",
+        "widgetV3c17f158d6fd48f3bbde5542cd33bc45",
+        "widgetV1bf6f9d736eb409d99bfe469d3a01686",
+        "widgetVc79b449ecd0f4edb97c0f9e798f2248e",
+        "widgetVf898736f3e714cd4bed4a48b692eb6f0",
+        "widgetV691df9c5a4384908acbc35323408a544",
+        "widgetV30cfb0b004f3436abbc7611b4028ec6c",
+        "widgetVed88bd406abb4d0cb8f8fe428dc11136",
+        "widgetV70c0f9b4c3b44460b4fe7d08a7204c7b",
+        "widgetV3a3bd88e5cf04a1a849459235d4dde70",
+        "widgetV04cef8e50be7412bb17682d3046fe531",
+        "widgetVcf08d35f43ba4d978bc2e36ebc603599",
+        "widgetVdb092f8518d0493ca8ba10d5df355d08",
+        "widgetV71d7234bf87d4638873e1ea38bf0445f",
+        "widgetVb2cc46e8c69945aa90bf2ede9c7bc04a",
+        "widgetVedbdb2700c094af8a28460478f25424a",
+        "widgetV0d81db7fe191421cb14c5d993d1581fe"
+    ];
+
+    // Global threshold variable
+    let threshold = 100;
+
+    function getRandomValue() {
+        return Math.floor(Math.random() * threshold + 1); // Generează un număr întreg între 0 și 100
+    }
+
+    // Crearea input box-urilor
+    widgetIds.forEach(id => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = getRandomValue();
+        input.id = id;
+        document.body.appendChild(input);
+    });
+
+    function updateValues() {
+        widgetIds.forEach(id => {
+            const input = document.getElementById(id);
+            if (input) {
+                input.value = getRandomValue();
+            }
+        });
+    }
+    
+    // Actualizarea valorilor la fiecare secundă
+    setInterval(updateValues, 2000); // 1000 milisecunde = 1 secundă
+
+    // Change the threshold value after 5 seconds
+    setTimeout(() => {
+        threshold = 200;
+    }, 20000); // 5000 milliseconds = 5 seconds
+</script>
+
+</body>
+</html>
